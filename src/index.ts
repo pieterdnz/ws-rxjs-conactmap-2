@@ -12,7 +12,7 @@ interface IPoint {
 }
 const start = Date.now();
 
-initBody("rx-js mergeMap 2");
+initBody("rx-js concatMap 2");
 
 // faking network request for save
 const saveLocation = (location: IPoint) => {
