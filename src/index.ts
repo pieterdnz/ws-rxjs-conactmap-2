@@ -3,7 +3,7 @@ import "@bospieter/ws-helper/styles.css";
 import { add, initBody } from "@bospieter/ws-helper";
 
 import { fromEvent, of } from "rxjs";
-import { mergeMap, delay } from "rxjs/operators";
+import { concatMap, delay } from "rxjs/operators";
 
 interface IPoint {
   x: number;
@@ -23,7 +23,7 @@ const click$ = fromEvent(document, "click");
 
 click$
   .pipe(
-    mergeMap((e: MouseEvent) => {
+    concatMap((e: MouseEvent) => {
       return saveLocation({
         x: e.clientX,
         y: e.clientY,
